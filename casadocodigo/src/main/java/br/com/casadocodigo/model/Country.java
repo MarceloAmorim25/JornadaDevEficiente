@@ -1,13 +1,15 @@
 package br.com.casadocodigo.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
+@Data
+@Entity
 public class Country {
 
     @Id
@@ -17,5 +19,11 @@ public class Country {
 
     @OneToMany(mappedBy = "country")
     private Set<State> state = new HashSet<State>();
+
+    public Country() { };
+
+    public Country(String name) {
+        this.name = name;
+    }
 
 }

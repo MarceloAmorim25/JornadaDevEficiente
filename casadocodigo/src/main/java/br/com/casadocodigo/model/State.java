@@ -1,7 +1,11 @@
 package br.com.casadocodigo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
+@Entity
 public class State {
 
     @Id
@@ -11,5 +15,11 @@ public class State {
 
     @ManyToOne(optional = false)
     private Country country;
+
+    public State() { };
+
+    public State(String name) {
+        this.name = name;
+    }
 
 }
