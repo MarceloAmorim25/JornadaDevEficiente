@@ -14,6 +14,9 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
+
+@RestController
+@RequestMapping("/countries")
 public class CountryController {
 
     @PersistenceContext
@@ -26,7 +29,7 @@ public class CountryController {
     @GetMapping
     public List<Country> getAll(){
         return  manager
-                .createQuery("SELECT c FROM Category c", Country.class)
+                .createQuery("SELECT c FROM Country c", Country.class)
                 .getResultList();
     }
 

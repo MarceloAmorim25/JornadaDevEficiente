@@ -26,11 +26,11 @@ public class Book {
 	private LocalDateTime published_at;
 	
 	public Book() {}
-	
-	public Book(@NotNull String title, Double price, Double pages) {
-		this.price = price;
+
+	public Book(@NotNull String title, String description, Double price, Double pages) {
 		this.title = title;
+		this.description = description;
+		this.price = price;
 		this.pages = pages;
 	}
-
 }

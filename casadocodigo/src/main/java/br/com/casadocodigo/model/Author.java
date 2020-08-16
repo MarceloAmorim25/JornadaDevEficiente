@@ -1,5 +1,7 @@
 package br.com.casadocodigo.model;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Data
 @Entity
 public class Author {
 	
@@ -39,45 +42,4 @@ public class Author {
 		
 	public Author() {};
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public LocalDateTime getRegisteredAt() {
-		return registeredAt;
-	}
-
-	public void setRegisteredAt(LocalDateTime registeredAt) {
-		this.registeredAt = registeredAt;
-	}
-
-	
 }

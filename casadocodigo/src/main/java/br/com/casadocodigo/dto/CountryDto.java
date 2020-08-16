@@ -2,7 +2,9 @@ package br.com.casadocodigo.dto;
 
 import br.com.casadocodigo.model.Category;
 import br.com.casadocodigo.model.Country;
+import lombok.Data;
 
+@Data
 public class CountryDto {
 
     private Long id;
