@@ -38,8 +38,8 @@ public class CategoryController {
 	@GetMapping
 	public List<Category> getAll(){		
 		return  manager
-					.createQuery("SELECT c FROM Category c", Category.class)
-					.getResultList();					
+				.createQuery("SELECT c FROM Category c", Category.class)
+				.getResultList();
 	}
 	
 	
@@ -64,14 +64,14 @@ public class CategoryController {
 		Category category = input.toCategoryType();	
 		manager.persist(category);	
 			
-		URI uri = uriBuilder				
-					.path("/authors/{id}")
-					.buildAndExpand(category.getId())
-					.toUri();
+		URI uri = uriBuilder
+				.path("/authors/{id}")
+				.buildAndExpand(category.getId())
+				.toUri();
 		
 		return ResponseEntity
-					.created(uri)
-					.body(new CategoryDto(category));
+				.created(uri)
+				.body(new CategoryDto(category));
 				
 	}
 

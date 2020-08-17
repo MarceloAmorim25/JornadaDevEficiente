@@ -38,8 +38,8 @@ public class BookController {
 	public List<Book> getAll(){
 		
 		return  manager
-					.createQuery("SELECT b FROM Book b", Book.class)
-					.getResultList();					
+				.createQuery("SELECT b FROM Book b", Book.class)
+				.getResultList();
 	}
 	
 	
@@ -69,14 +69,14 @@ public class BookController {
 		
 		manager.persist(book);	
 			
-		URI uri = uriBuilder				
-					.path("/books/{id}")
-					.buildAndExpand(book.getId())
-					.toUri();
+		URI uri = uriBuilder
+				.path("/books/{id}")
+				.buildAndExpand(book.getId())
+				.toUri();
 		
 		return ResponseEntity
-					.created(uri)
-					.body(new BookDto(book));
+				.created(uri)
+				.body(new BookDto(book));
 				
 	}
 

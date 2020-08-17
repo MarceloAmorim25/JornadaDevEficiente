@@ -35,8 +35,8 @@ public class AuthorController {
 	public List<Author> getAll(){
 		
 		return  manager
-					.createQuery("SELECT a FROM Author a", Author.class)
-					.getResultList();					
+				.createQuery("SELECT a FROM Author a", Author.class)
+				.getResultList();
 	}
 	
 	@GetMapping("{id}")
@@ -64,14 +64,14 @@ public class AuthorController {
 		
 		manager.persist(author);	
 			
-		URI uri = uriBuilder				
-					.path("/authors/{id}")
-					.buildAndExpand(author.getId())
-					.toUri();
+		URI uri = uriBuilder
+				.path("/authors/{id}")
+				.buildAndExpand(author.getId())
+				.toUri();
 		
 		return ResponseEntity
-					.created(uri)
-					.body(new AuthorDto(author));
+				.created(uri)
+				.body(new AuthorDto(author));
 				
 	}
 	
